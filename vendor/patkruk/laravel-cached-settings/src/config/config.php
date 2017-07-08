@@ -30,6 +30,6 @@ return array(
     | The name of the table in the database where settings are stored.
     |
     */
-    'tableName' => 'settings',
+    'tableName' => 'cache',
 
 );

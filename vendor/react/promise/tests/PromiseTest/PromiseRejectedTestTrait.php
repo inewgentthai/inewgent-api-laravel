@@ -3,7 +3,6 @@
 namespace React\Promise\PromiseTest;
 
 use React\Promise\Deferred;
-use React\Promise\UnhandledRejectionException;
 
 trait PromiseRejectedTestTrait
 {
@@ -221,25 +220,6 @@ trait PromiseRejectedTestTrait
 
         $adapter->reject(1);
         $this->assertNull($adapter->promise()->done());
-    }
-
-    /** @test */
-    public function unhandledRejectionExceptionThrownByDoneHoldsRejectionValue()
-    {
-        $adapter = $this->getPromiseTestAdapter();
-
-        $expected = new \stdClass();
-
-        $adapter->reject($expected);
-
-        try {
-            $adapter->promise()->done();
-        } catch (UnhandledRejectionException $e) {
-            $this->assertSame($expected, $e->getReason());
-            return;
-        }
-
-        $this->fail();
     }
 
     /** @test */

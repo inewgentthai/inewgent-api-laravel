@@ -4,8 +4,7 @@ React/Promise
 A lightweight implementation of
 [CommonJS Promises/A](http://wiki.commonjs.org/wiki/Promises/A) for PHP.
 
-[![Build Status](https://travis-ci.org/reactphp/promise.svg?branch=master)](http://travis-ci.org/reactphp/promise)
-[![Coverage Status](https://coveralls.io/repos/github/reactphp/promise/badge.svg?branch=master)](https://coveralls.io/github/reactphp/promise?branch=master)
+[![Build Status](https://secure.travis-ci.org/reactphp/promise.png?branch=master)](http://travis-ci.org/reactphp/promise)
 
 Table of Contents
 -----------------
@@ -447,11 +446,6 @@ $promise->then(function ($value) {
 Useful functions for creating, joining, mapping and reducing collections of
 promises.
 
-All functions working on promise collections (like `all()`, `race()`, `some()`
-etc.) support cancellation. This means, if you call `cancel()` on the returned
-promise, all promises in the collection are cancelled. If the collection itself
-is a promise which resolves to an array, this promise is also cancelled.
-
 #### resolve()
 
 ```php
@@ -463,10 +457,7 @@ Creates a promise for the supplied `$promiseOrValue`.
 If `$promiseOrValue` is a value, it will be the resolution value of the
 returned promise.
 
-If `$promiseOrValue` is a thenable (any object that provides a `then()` method),
-a trusted promise that follows the state of the thenable is returned.
-
-If `$promiseOrValue` is a promise, it will be returned as is.
+If `$promiseOrValue` is a promise, it will simply be returned.
 
 Note: The promise returned is always a promise implementing
 [ExtendedPromiseInterface](#extendedpromiseinterface). If you pass in a custom
@@ -524,9 +515,6 @@ will be the resolution value of the triggering item.
 The returned promise will only reject if *all* items in `$promisesOrValues` are
 rejected. The rejection value will be an array of all rejection reasons.
 
-The returned promise will also reject with a `React\Promise\Exception\LengthException`
-if `$promisesOrValues` contains 0 items.
-
 #### some()
 
 ```php
@@ -542,9 +530,6 @@ The returned promise will reject if it becomes impossible for `$howMany` items
 to resolve (that is, when `(count($promisesOrValues) - $howMany) + 1` items
 reject). The rejection value will be an array of
 `(count($promisesOrValues) - $howMany) + 1` rejection reasons.
-
-The returned promise will also reject with a `React\Promise\Exception\LengthException`
-if `$promisesOrValues` contains less items than `$howMany`.
 
 #### map()
 
@@ -675,18 +660,16 @@ $deferred->promise()
     ->then(function ($x) {
         throw new \Exception($x + 1);
     })
-    ->otherwise(function (\Exception $x) {
+    ->then(null, function (\Exception $x) {
         // Propagate the rejection
         throw $x;
     })
-    ->otherwise(function (\Exception $x) {
+    ->then(null, function (\Exception $x) {
         // Can also propagate by returning another rejection
-        return React\Promise\reject(
-            new \Exception($x->getMessage() + 1)
-        );
+        return React\Promise\reject((integer) $x->getMessage() + 1);
     })
-    ->otherwise(function ($x) {
-        echo 'Reject ' . $x->getMessage(); // 3
+    ->then(null, function ($x) {
+        echo 'Reject ' . $x; // 3
     });
 
 $deferred->resolve(1);  // Prints "Reject 3"
@@ -705,12 +688,12 @@ $deferred->promise()
         return $x + 1;
     })
     ->then(function ($x) {
-        throw new \Exception($x + 1);
+        throw \Exception($x + 1);
     })
-    ->otherwise(function (\Exception $x) {
+    ->then(null, function (\Exception $x) {
         // Handle the rejection, and don't propagate.
         // This is like catch without a rethrow
-        return $x->getMessage() + 1;
+        return (integer) $x->getMessage() + 1;
     })
     ->then(function ($x) {
         echo 'Mixed ' . $x; // 4
@@ -792,26 +775,27 @@ function getJsonResult()
         );
 }
 
-// Here we provide no rejection handler. If the promise returned has been
-// rejected, the ApiErrorException will be thrown
+// Here we provide no rejection handler.
+// If the promise returned has been rejected,
+// a React\Promise\UnhandledRejectionException will be thrown
 getJsonResult()
     ->done(
         // Consume transformed object
         function ($jsonResultObject) {
-            // Do something with $jsonResultObject
+            // Do something with $jsonObject
         }
     );
 
 // Here we provide a rejection handler which will either throw while debugging
-// or log the exception
+// or log the exception.
 getJsonResult()
     ->done(
-        function ($jsonResultObject) {
-            // Do something with $jsonResultObject
+        function ($jsonObject) {
+            // Do something with $jsonObject
         },
         function (ApiErrorException $exception) {
             if (isDebug()) {
-                throw $exception;
+                throw $e;
             } else {
                 logException($exception);
             }

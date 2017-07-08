@@ -40,10 +40,6 @@ class PhpEngine implements EngineInterface {
 		{
 			$this->handleViewException($e, $obLevel);
 		}
-		catch (\Throwable $e)
-		{
-			$this->handleViewException($e, $obLevel);
-		}
 
 		return ltrim(ob_get_clean());
 	}

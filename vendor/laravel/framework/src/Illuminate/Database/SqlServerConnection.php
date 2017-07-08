@@ -14,7 +14,7 @@ class SqlServerConnection extends Connection {
 	 * @param  \Closure  $callback
 	 * @return mixed
 	 *
-	 * @throws \Throwable
+	 * @throws \Exception
 	 */
 	public function transaction(Closure $callback)
 	{
@@ -39,12 +39,6 @@ class SqlServerConnection extends Connection {
 		// up in the database. Then we'll re-throw the exception so it can
 		// be handled how the developer sees fit for their applications.
 		catch (\Exception $e)
-		{
-			$this->pdo->exec('ROLLBACK TRAN');
-
-			throw $e;
-		}
-		catch (\Throwable $e)
 		{
 			$this->pdo->exec('ROLLBACK TRAN');
 

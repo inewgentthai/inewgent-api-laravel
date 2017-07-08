@@ -8,7 +8,7 @@ class UnhandledRejectionException extends \RuntimeException
 
     public static function resolve($reason)
     {
-        if ($reason instanceof \Exception || $reason instanceof \Throwable) {
+        if ($reason instanceof \Exception) {
             return $reason;
         }
 

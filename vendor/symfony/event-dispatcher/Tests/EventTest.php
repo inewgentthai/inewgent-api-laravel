@@ -11,14 +11,13 @@
 
 namespace Symfony\Component\EventDispatcher\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
 /**
  * Test class for Event.
  */
-class EventTest extends TestCase
+class EventTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \Symfony\Component\EventDispatcher\Event
@@ -66,6 +65,7 @@ class EventTest extends TestCase
      */
     public function testLegacySetDispatcher()
     {
+        $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
         $this->event->setDispatcher($this->dispatcher);
         $this->assertSame($this->dispatcher, $this->event->getDispatcher());
     }
@@ -75,6 +75,7 @@ class EventTest extends TestCase
      */
     public function testLegacyGetDispatcher()
     {
+        $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
         $this->assertNull($this->event->getDispatcher());
     }
 
@@ -83,6 +84,7 @@ class EventTest extends TestCase
      */
     public function testLegacyGetName()
     {
+        $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
         $this->assertNull($this->event->getName());
     }
 
@@ -91,6 +93,7 @@ class EventTest extends TestCase
      */
     public function testLegacySetName()
     {
+        $this->iniSet('error_reporting', -1 & ~E_USER_DEPRECATED);
         $this->event->setName('foo');
         $this->assertEquals('foo', $this->event->getName());
     }

@@ -23,14 +23,14 @@ return array(
          'mysql' => array(
             'driver'    => 'mysql',
             'read' => array(
-                'host' => 'mysql', //61.91.1.146
+                'host' => 'localhost', //61.91.1.146
             ),
             'write' => array(
-                'host' => 'mysql' // 61.91.1.146
+                'host' => 'localhost' // 61.91.1.146
             ),
-            'database'  => 'inewgen', //authen
-            'username'  => 'root', // dev
-            'password'  => 'root', // dev!          'password'  => 'secret',
+            'database'  => 'siamits', //authen
+            'username'  => 'homestead', // dev
+            'password'  => 'secret', // dev!          'password'  => 'secret',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

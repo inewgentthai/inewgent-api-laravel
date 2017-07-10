@@ -25,10 +25,10 @@ $app = new Illuminate\Foundation\Application();
 */
 
 $envMapping = [
-    'apis.inewgen.dev'   => 'local',
-    'admins.inewgen.dev' => 'local',
-    'www.inewgen.dev'    => 'local',
-    'res.inewgen.dev'    => 'local',
+    'apis.inewgen.loc'   => 'local',
+    'admins.inewgen.loc' => 'local',
+    'www.inewgen.loc'    => 'local',
+    'res.inewgen.loc'    => 'local',
 ];
 
 $env = $app->detectEnvironment(function () use ($envMapping) {

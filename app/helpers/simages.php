@@ -41,6 +41,6 @@ class Simages
         $siamits_res = Config::get('url.inewgen-res');
         $name = 'logo.jpg';
 
-        return $siamits_res . '/img/default/siamits_logo/png/' . $w . '/' . $h . '/' . $name;
+        return $siamits_res . '/img/default/inewgen_logo_full/png/' . $w . '/' . $h . '/' . $name;
     }
 }

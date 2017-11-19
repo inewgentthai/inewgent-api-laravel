@@ -34,7 +34,7 @@ class YoutubeController extends ApiController
 
         $user_id = array_get($data, 'user_id', 0);
         $order = isset($data['order']) ? $data['order'] : 'position';
-        $sort = isset($data['sort']) ? $data['sort'] : 'desc';
+        $sort = isset($data['sort']) ? $data['sort'] : 'asc';
 
         // Set Pagination
         $take = (int) (isset($data['perpage'])) ? $data['perpage'] : 20;
@@ -56,7 +56,7 @@ class YoutubeController extends ApiController
             'skip' => $skip,
             'take' => $take,
             'order' => array_get($data, 'order', 'position'),
-            'sort' => array_get($data, 'sort', 'desc'),
+            'sort' => array_get($data, 'sort', 'asc'),
         );
         
         isset($data['s']) ? $filters['s'] = $data['s'] : '';

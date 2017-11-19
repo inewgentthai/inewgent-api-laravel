@@ -56,7 +56,7 @@ class YoutubeController extends ApiController
             'skip' => $skip,
             'take' => $take,
             'order' => array_get($data, 'order', 'position'),
-            'sort' => array_get($data, 'sort', 'asc'),
+            'sort' => array_get($data, 'sort', 'desc'),
         );
         
         isset($data['s']) ? $filters['s'] = $data['s'] : '';

@@ -28,9 +28,9 @@ class YoutubeController extends ApiController
         // Get cache value
         $keycache = getKeyCache($this->pathcache . '.index', $data);
 
-        if ($response = getCache($keycache)) {
-            return API::createResponse($response, 0);
-        }
+        // if ($response = getCache($keycache)) {
+        //     return API::createResponse($response, 0);
+        // }
 
         $user_id = array_get($data, 'user_id', 0);
         $order = isset($data['order']) ? $data['order'] : 'position';
@@ -107,8 +107,8 @@ class YoutubeController extends ApiController
             'record'     => $entries,
         );
 
-        // Save cache value
-        saveCache($keycache, $response);
+        // // Save cache value
+        // saveCache($keycache, $response);
 
         return API::createResponse($response, 0);
     }
@@ -132,12 +132,12 @@ class YoutubeController extends ApiController
             return API::createResponse($response, 1003);
         }
 
-        // Get cache value
-        $keycache = getKeyCache($this->pathcache . '.show.' . $id, $data);
+        // // Get cache value
+        // $keycache = getKeyCache($this->pathcache . '.show.' . $id, $data);
         
-        if ($response = getCache($keycache)) {
-            return API::createResponse($response, 0);
-        }
+        // if ($response = getCache($keycache)) {
+        //     return API::createResponse($response, 0);
+        // }
 
         $filters = array(
             'id' => $id,
@@ -183,8 +183,8 @@ class YoutubeController extends ApiController
             'record' => $entries
         );
 
-        // Save cache value
-        saveCache($keycache, $response);
+        // // Save cache value
+        // saveCache($keycache, $response);
 
         return API::createResponse($response, 0);
     }
@@ -246,8 +246,8 @@ class YoutubeController extends ApiController
             'data' => $data,
         );
 
-        // Clear cache value
-        clearCacheStore($this->pathcache);
+        // // Clear cache value
+        // clearCacheStore($this->pathcache);
 
         return API::createResponse($response, 0);
     }
@@ -299,8 +299,8 @@ class YoutubeController extends ApiController
             'record' => $data,
         );
 
-        // Clear cache value
-        clearCacheUpdate($this->pathcache);
+        // // Clear cache value
+        // clearCacheUpdate($this->pathcache);
 
         return API::createResponse($response, 0);
     }
@@ -337,8 +337,8 @@ class YoutubeController extends ApiController
             'data' => $data,
         );
 
-        // Clear cache value
-        clearCacheDestroy($this->$pathcache);
+        // // Clear cache value
+        // clearCacheDestroy($this->$pathcache);
 
         return API::createResponse($response, 0);
     }

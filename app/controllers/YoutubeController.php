@@ -195,7 +195,7 @@ class YoutubeController extends ApiController
 
         // Validator request
         $rules = array(
-            'code' => 'required|integer|min:1',
+            'code' => 'required|min:1',
             'position' => 'integer|max:2',
             'type' => 'integer|min:1',
             'status' => 'integer|min:1|in:0,1',

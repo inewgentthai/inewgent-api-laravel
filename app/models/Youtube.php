@@ -13,6 +13,11 @@ class Youtube extends Eloquent
             $query->where('user_id', '=', $val);
         }
 
+        if (isset($filters['status'])) {
+            $val = array_get($filters, 'status');
+            $query->where('status', '=', $val);
+        }
+
         if ($val = array_get($filters, 's')) {
             $query->where('title', 'LIKE', '%'.$val.'%');
             $query->orWhere('subtitle', 'LIKE', '%'.$val.'%');

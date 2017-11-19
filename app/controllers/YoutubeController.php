@@ -47,8 +47,8 @@ class YoutubeController extends ApiController
             $filters['user_id'] = $user_id;
         }
 
-        if ($status = array_get($data, 'status', false)) {
-            $filters['status'] = $status;
+        if (isset($data['status'])) {
+            $filters['status'] = $data['status'];
         }
 
         $parameters = array(

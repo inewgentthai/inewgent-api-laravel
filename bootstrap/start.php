@@ -29,6 +29,11 @@ $envMapping = [
     'admins.inewgen.loc' => 'local',
     'www.inewgen.loc'    => 'local',
     'res.inewgen.loc'    => 'local',
+
+    'apis.inewgen.dev'   => 'local',
+    'admins.inewgen.dev' => 'local',
+    'www.inewgen.dev'    => 'local',
+    'res.inewgen.dev'    => 'local',
 ];
 
 $env = $app->detectEnvironment(function () use ($envMapping) {

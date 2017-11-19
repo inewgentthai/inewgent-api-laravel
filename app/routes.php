@@ -25,6 +25,10 @@ if (routeLoad($prefix . 'banners', $req_path, $route_conf)) {
     Route::resource($prefix . 'banners', 'BannersController');
 }
 
+if (routeLoad($prefix . 'youtube', $req_path, $route_conf)) {
+    Route::resource($prefix . 'youtube', 'YoutubeController');
+}
+
 if (routeLoad($prefix . 'blockwords', $req_path, $route_conf)) {
     Route::resource($prefix . 'blockwords', 'BlockwordsController');
 }

@@ -215,6 +215,7 @@ class YoutubeController extends ApiController
             'name' => (isset($data['name']) ? $data['name'] : ''),
             'artist' => (isset($data['artist']) ? $data['artist'] : ''),
             'url' => (isset($data['url']) ? $data['url'] : ''),
+            'image' => (isset($data['image']) ? $data['image'] : ''),
             'description' => (isset($data['description']) ? $data['description'] : ''),
             'user_id' => (isset($data['user_id']) ? $data['user_id'] : ''),
             'position' => (isset($data['position']) ? $data['position'] : date("YmdHis")),
@@ -279,6 +280,7 @@ class YoutubeController extends ApiController
         isset($data['name']) ? $youtube['name'] = $data['name'] : '';
         isset($data['artist']) ? $youtube['artist'] = $data['artist'] : '';
         isset($data['url']) ? $youtube['url'] = $data['url'] : '';
+        isset($data['image']) ? $youtube['image'] = $data['image'] : '';
         isset($data['description']) ? $youtube['description'] = $data['description'] : '';
         isset($data['user_id']) ? $youtube['user_id'] = $data['user_id'] : '';
         isset($data['position']) ? $youtube['position'] = $data['position'] : '';

@@ -7,9 +7,12 @@ namespace Composer\Autoload;
 class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
 {
     public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         'e40631d46120a9c38ea139981f8dab26' => __DIR__ . '/..' . '/ircmaxell/password-compat/lib/password.php',
         'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+        '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '3919eeb97e98d4648304477f8ef734ba' => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib/Crypt/Random.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
     );
@@ -17,14 +20,33 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\Translation\\' => 30,
+            'Symfony\\Component\\Security\\Core\\' => 32,
+            'Symfony\\Component\\Routing\\' => 26,
+            'Symfony\\Component\\Process\\' => 26,
+            'Symfony\\Component\\HttpKernel\\' => 29,
+            'Symfony\\Component\\HttpFoundation\\' => 33,
+            'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
+            'Symfony\\Component\\DomCrawler\\' => 29,
+            'Symfony\\Component\\Debug\\' => 24,
+            'Symfony\\Component\\CssSelector\\' => 30,
+            'Symfony\\Component\\Console\\' => 26,
+            'Symfony\\Component\\BrowserKit\\' => 29,
             'Stash\\' => 6,
         ),
         'R' => 
         array (
             'React\\Promise\\' => 14,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
+            'Patchwork\\' => 10,
         ),
         'M' => 
         array (
@@ -47,9 +69,45 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
         'Symfony\\Component\\Yaml\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
+        'Symfony\\Component\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Symfony\\Component\\Security\\Core\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security-core',
+        ),
+        'Symfony\\Component\\Routing\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/routing',
+        ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
+        'Symfony\\Component\\HttpKernel\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-kernel',
+        ),
+        'Symfony\\Component\\HttpFoundation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
         ),
         'Symfony\\Component\\Filesystem\\' => 
         array (
@@ -59,6 +117,26 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         array (
             0 => __DIR__ . '/..' . '/symfony/event-dispatcher',
         ),
+        'Symfony\\Component\\DomCrawler\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/dom-crawler',
+        ),
+        'Symfony\\Component\\Debug\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/debug',
+        ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
+        ),
+        'Symfony\\Component\\Console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'Symfony\\Component\\BrowserKit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/browser-kit',
+        ),
         'Stash\\' => 
         array (
             0 => __DIR__ . '/..' . '/tedivm/stash/src/Stash',
@@ -66,6 +144,14 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'React\\Promise\\' => 
         array (
             0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
+        'Patchwork\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/patchwork/utf8/src/Patchwork',
         ),
         'Monolog\\' => 
         array (
@@ -93,12 +179,23 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         ),
     );
 
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
+    );
+
     public static $prefixesPsr0 = array (
         'W' => 
         array (
             'Whoops' => 
             array (
                 0 => __DIR__ . '/..' . '/filp/whoops/src',
+            ),
+        ),
+        'U' => 
+        array (
+            'UpdateHelper\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/kylekatarnls/update-helper/src',
             ),
         ),
         'T' => 
@@ -114,54 +211,6 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
             array (
                 0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
             ),
-            'Symfony\\Component\\Translation\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/translation',
-            ),
-            'Symfony\\Component\\Security\\Core\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/security-core',
-            ),
-            'Symfony\\Component\\Routing\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/routing',
-            ),
-            'Symfony\\Component\\Process\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/process',
-            ),
-            'Symfony\\Component\\HttpKernel\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/http-kernel',
-            ),
-            'Symfony\\Component\\HttpFoundation\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/http-foundation',
-            ),
-            'Symfony\\Component\\Finder\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/finder',
-            ),
-            'Symfony\\Component\\DomCrawler\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/dom-crawler',
-            ),
-            'Symfony\\Component\\Debug\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/debug',
-            ),
-            'Symfony\\Component\\CssSelector\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/css-selector',
-            ),
-            'Symfony\\Component\\Console\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/console',
-            ),
-            'Symfony\\Component\\BrowserKit\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/symfony/browser-kit',
-            ),
             'Stack' => 
             array (
                 0 => __DIR__ . '/..' . '/stack/builder/src',
@@ -169,10 +218,6 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/psr/log',
-            ),
             'Predis' => 
             array (
                 0 => __DIR__ . '/..' . '/predis/predis/lib',
@@ -181,10 +226,6 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
             array (
                 0 => __DIR__ . '/..' . '/patkruk/laravel-cached-settings/src',
             ),
-            'Patchwork' => 
-            array (
-                0 => __DIR__ . '/..' . '/patchwork/utf8/class',
-            ),
             'PHPParser' => 
             array (
                 0 => __DIR__ . '/..' . '/nikic/php-parser/lib',
@@ -192,10 +233,6 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         ),
         'N' => 
         array (
-            'Normalizer' => 
-            array (
-                0 => __DIR__ . '/..' . '/patchwork/utf8/class',
-            ),
             'Net' => 
             array (
                 0 => __DIR__ . '/..' . '/phpseclib/phpseclib/phpseclib',
@@ -262,10 +299,6 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
             array (
                 0 => __DIR__ . '/..' . '/classpreloader/classpreloader/src',
             ),
-            'Carbon' => 
-            array (
-                0 => __DIR__ . '/..' . '/nesbot/carbon/src',
-            ),
         ),
         'B' => 
         array (
@@ -326,6 +359,7 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'NavigationsRepositoryInterface' => __DIR__ . '/../..' . '/app/repositories/NavigationsRepositoryInterface.php',
         'News' => __DIR__ . '/../..' . '/app/models/News.php',
         'NewsController' => __DIR__ . '/../..' . '/app/controllers/NewsController.php',
+        'Normalizer' => __DIR__ . '/..' . '/patchwork/utf8/src/Normalizer.php',
         'OrmCache' => __DIR__ . '/../..' . '/app/libraries/OrmCache.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
@@ -489,6 +523,7 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'PHP_CodeCoverage_Driver' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Driver.php',
         'PHP_CodeCoverage_Driver_HHVM' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Driver/HHVM.php',
+        'PHP_CodeCoverage_Driver_PHPDBG' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Driver/PHPDBG.php',
         'PHP_CodeCoverage_Driver_Xdebug' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Driver/Xdebug.php',
         'PHP_CodeCoverage_Exception' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Exception.php',
         'PHP_CodeCoverage_Exception_UnintentionallyCoveredCode' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage/Exception/UnintentionallyCoveredCode.php',
@@ -530,7 +565,9 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_Token_ARRAY' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_ARRAY_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_AS' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_ASYNC' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_AT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_AWAIT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_BACKTICK' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_BAD_CHARACTER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_BOOLEAN_AND' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -554,6 +591,7 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_Token_COLON' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_COMMA' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_COMMENT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_COMPILER_HALT_OFFSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_CONCAT_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_CONST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_CONSTANT_ENCAPSED_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -588,7 +626,9 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_Token_ENDSWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_ENDWHILE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_END_HEREDOC' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_ENUM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_EQUALS' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_EVAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_EXCLAMATION_MARK' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_EXIT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -644,9 +684,11 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_Token_NEW' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_C' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_SEPARATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_NULLSAFE_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NUM_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_ONUMBER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OPEN_BRACKET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OPEN_CURLY' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OPEN_SQUARE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -680,6 +722,7 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_Token_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_STRING_VARNAME' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_SUPER' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_SWITCH' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_Stream' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream.php',
         'PHP_Token_Stream_CachingFactory' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token/Stream/CachingFactory.php',
@@ -694,10 +737,21 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'PHP_Token_UNSET' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_UNSET_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_USE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_USE_FUNCTION' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VAR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_VARIABLE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_WHERE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHILE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_WHITESPACE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_ATTRIBUTE' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_CATEGORY' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_CATEGORY_LABEL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_CHILDREN' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_LABEL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_REQUIRED' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_TAG_GT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_TAG_LT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_XHP_TEXT' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_XOR_EQUAL' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_YIELD_FROM' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
@@ -739,13 +793,13 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'SebastianBergmann\\RecursionContext\\Exception' => __DIR__ . '/..' . '/sebastian/recursion-context/src/Exception.php',
         'SebastianBergmann\\RecursionContext\\InvalidArgumentException' => __DIR__ . '/..' . '/sebastian/recursion-context/src/InvalidArgumentException.php',
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
-        'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Symfony/Component/HttpFoundation/Resources/stubs/SessionHandlerInterface.php',
+        'SessionHandlerInterface' => __DIR__ . '/..' . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
         'StashCache' => __DIR__ . '/../..' . '/app/libraries/StashCache.php',
         'Tagables' => __DIR__ . '/../..' . '/app/models/Tagables.php',
         'Tags' => __DIR__ . '/../..' . '/app/models/Tags.php',
         'TagsController' => __DIR__ . '/../..' . '/app/controllers/TagsController.php',
         'TestCase' => __DIR__ . '/../..' . '/app/tests/TestCase.php',
-        'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/Text/Template.php',
+        'Text_Template' => __DIR__ . '/..' . '/phpunit/php-text-template/src/Template.php',
         'Ubench' => __DIR__ . '/../..' . '/app/libraries/Ubench.php',
         'User\\Sso' => __DIR__ . '/../..' . '/app/libraries/User/Sso.php',
         'Users' => __DIR__ . '/../..' . '/app/models/Users.php',
@@ -753,6 +807,8 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         'Whoops\\Module' => __DIR__ . '/..' . '/filp/whoops/src/deprecated/Zend/Module.php',
         'Whoops\\Provider\\Zend\\ExceptionStrategy' => __DIR__ . '/..' . '/filp/whoops/src/deprecated/Zend/ExceptionStrategy.php',
         'Whoops\\Provider\\Zend\\RouteNotFoundStrategy' => __DIR__ . '/..' . '/filp/whoops/src/deprecated/Zend/RouteNotFoundStrategy.php',
+        'Youtube' => __DIR__ . '/../..' . '/app/models/Youtube.php',
+        'YoutubeController' => __DIR__ . '/../..' . '/app/controllers/YoutubeController.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -760,6 +816,7 @@ class ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit5a845b7e404243e86be8c40edc7ffcf6::$classMap;
 

@@ -1,0 +1,29 @@
+version: '2' # version ของ docker compose
+services:
+
+   # Php สำหรับการสร้าง php container
+  inewgent_api_php:
+    build: ./docker-php # ชี้ไป path ของ Dockerfile เพื่อที่จะใช้ในการสร้าง container
+    working_dir: /var/www/laravel # directory ที่จะเป็นจัดที่เราทำงาน
+    volumes:
+      # เป็น volume ไฟล์ จากเครื่องเราไปยัง container จะเป็นการเชื่อมต่อกันแบบ 
+      # ถ้าไฟล์ในเครื่องเราเปลี่ยนแปลงใน container ก็จะเปลี่ยนแปลงตามครับ
+      - ./:/var/www/laravel 
+    networks:
+      network-inewgent:
+
+  # Web Server สำหรับการสร้าง nginx container
+  inewgent_api:
+    container_name: inewgent_api
+    build: ./docker-nginx
+    working_dir: /var/www/laravel # directory ที่จะเป็นจัดที่เราทำงาน
+    volumes_from:
+      - inewgent_api_php # คือการ volume จาก php container นะครับ
+    ports:
+      - 5001:80 # port sที่เราต้องการจะใช้ระหว่าง {host}:{container} นะครับ
+    networks:
+      network-inewgent:
+
+networks:
+  network-inewgent:
+    external: true

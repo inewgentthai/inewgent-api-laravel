@@ -2,6 +2,9 @@
 
 namespace React\Promise;
 
+/**
+ * @deprecated 2.8.0 External usage of RejectedPromise is deprecated, use `reject()` instead.
+ */
 class RejectedPromise implements ExtendedPromiseInterface, CancellablePromiseInterface
 {
     private $reason;
@@ -17,12 +20,14 @@ class RejectedPromise implements ExtendedPromiseInterface, CancellablePromiseInt
 
     public function then(callable $onFulfilled = null, callable $onRejected = null, callable $onProgress = null)
     {
-        try {
-            if (null === $onRejected) {
-                return new RejectedPromise($this->reason);
-            }
+        if (null === $onRejected) {
+            return $this;
+        }
 
+        try {
             return resolve($onRejected($this->reason));
+        } catch (\Throwable $exception) {
+            return new RejectedPromise($exception);
         } catch (\Exception $exception) {
             return new RejectedPromise($exception);
         }
@@ -48,7 +53,7 @@ class RejectedPromise implements ExtendedPromiseInterface, CancellablePromiseInt
     public function otherwise(callable $onRejected)
     {
         if (!_checkTypehint($onRejected, $this->reason)) {
-            return new RejectedPromise($this->reason);
+            return $this;
         }
 
         return $this->then(null, $onRejected);
@@ -65,7 +70,7 @@ class RejectedPromise implements ExtendedPromiseInterface, CancellablePromiseInt
 
     public function progress(callable $onProgress)
     {
-        return new RejectedPromise($this->reason);
+        return $this;
     }
 
     public function cancel()
